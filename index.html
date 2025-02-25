@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Your Fitness Companion</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo.png" alt="FitFlow Logo" class="logo">
+            <h1>FitFlow</h1>
+        </header>
+
+        <main>
+            <section id="workout-tracker">
+                <h2><i class="fas fa-dumbbell"></i> Workout Tracker</h2>
+                <form id="workout-form">
+                    <select id="exercise-type" required>
+                        <option value="">Select Exercise Type</option>
+                    </select>
+                    
+                    <input 
+                        type="number" 
+                        id="duration" 
+                        placeholder="Duration (minutes)" 
+                        min="1" 
+                        max="240" 
+                        required
+                    >
+                    
+                    <input 
+                        type="number" 
+                        id="intensity" 
+                        placeholder="Intensity (1-10)" 
+                        min="1" 
+                        max="10" 
+                        required
+                    >
+                    
+                    <button type="submit">
+                        <i class="fas fa-plus-circle"></i> Log Workout
+                    </button>
+                </form>
+
+                <div id="workout-history">
+                    <h3><i class="fas fa-history"></i> Your Workouts</h3>
+                    <ul id="workout-list"></ul>
+                </div>
+            </section>
+
+            <section id="progress-tracker">
+                <h2><i class="fas fa-chart-line"></i> Progress Overview</h2>
+                
+                <div id="stats-container">
+                    <div class="stat-card">
+                        <h4>Total Workouts</h4>
+                        <p id="total-workouts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Total Duration</h4>
+                        <p id="total-duration">0 mins</p>
+                    </div>
+                </div>
+
+                <div id="workout-insights">
+                    <h3><i class="fas fa-lightbulb"></i> Quick Insights</h3>
+                    <div id="insights-content">
+                        <p>No insights yet. Keep tracking your workouts!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="goal-setting">
+            <h2><i class="fas fa-bullseye"></i> Set Your Fitness Goals</h2>
+            <form id="goal-form">
+                <select id="goal-type">
+                    <option value="">Select Goal Type</option>
+                    <option value="weight-loss">Weight Loss</option>
+                    <option value="muscle-gain">Muscle Gain</option>
+                    <option value="endurance">Endurance</option>
+                    <option value="flexibility">Flexibility</option>
+                </select>
+                <input 
+                    type="number" 
+                    id="goal-target" 
+                    placeholder="Target (e.g., weight, duration)"
+                >
+                <input 
+                    type="date" 
+                    id="goal-deadline"
+                    placeholder="Deadline"
+                >
+                <button type="submit">
+                    <i class="fas fa-flag-checkered"></i> Set Goal
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 FitFlow - Your Intelligent Fitness Companion</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for Workout Insights -->
+    <div id="insights-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Detailed Workout Insights</h2>
+            <div id="modal-insights-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
